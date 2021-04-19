@@ -1,0 +1,350 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='DS1CLNT110')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZLE_SOURCING_LOGIC_SRV_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="Request" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Customer"/>
+                    <PropertyRef Name="Material"/>
+                    <PropertyRef Name="OrderQty"/>
+                    <PropertyRef Name="ShippingMethod"/>
+                    <PropertyRef Name="RequestDate"/>
+                    <PropertyRef Name="Studded"/>
+                    <PropertyRef Name="AcceptSaturday"/>
+                </Key>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OrderQty" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ShippingMethod" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RequestDate" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Studded" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AcceptSaturday" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ShipmentSet" Relationship="ZLE_SOURCING_LOGIC_SRV_SRV.Shipments" FromRole="FromRole_Shipments" ToRole="ToRole_Shipments"/>
+            </EntityType>
+            <EntityType Name="Shipment" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ConfirmedQty"/>
+                    <PropertyRef Name="Plant"/>
+                    <PropertyRef Name="DeliveryDate"/>
+                    <PropertyRef Name="DeliveryTime"/>
+                </Key>
+                <Property Name="ConfirmedQty" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Plant" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DeliveryDate" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DeliveryTime" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ShuttleFlag" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ShippingFees" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ImmediateCutoff" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ServiceLevelSet" Relationship="ZLE_SOURCING_LOGIC_SRV_SRV.ServiceLevels" FromRole="FromRole_ServiceLevels" ToRole="ToRole_ServiceLevels"/>
+            </EntityType>
+            <EntityType Name="ServiceLevel" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Language"/>
+                </Key>
+                <Property Name="Language" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="UIShipment" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Language"/>
+                    <PropertyRef Name="Customer"/>
+                    <PropertyRef Name="Material"/>
+                    <PropertyRef Name="RequestDate"/>
+                    <PropertyRef Name="Plant"/>
+                    <PropertyRef Name="DeliveryDate"/>
+                    <PropertyRef Name="OrderQty"/>
+                    <PropertyRef Name="DeliveryTime"/>
+                    <PropertyRef Name="ShippingMethod"/>
+                    <PropertyRef Name="Studded"/>
+                    <PropertyRef Name="AcceptSaturday"/>
+                    <PropertyRef Name="CustomerCluster"/>
+                </Key>
+                <Property Name="ConfirmedQty" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Language" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="RequestDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Plant" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DeliveryDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OrderQty" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="DeliveryTime" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ShippingMethod" Type="Edm.String" Nullable="false" sap:unicode="false" sap:value-list="fixed-values" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ShuttleFlag" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicator" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ShippingFees" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Studded" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:value-list="fixed-values" sap:label="Indicator" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="AcceptSaturday" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:value-list="fixed-values" sap:label="Indicator" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CustomerCluster" Type="Edm.String" Nullable="false" sap:unicode="false" sap:value-list="fixed-values" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <NavigationProperty Name="UIServiceLevelSet" Relationship="ZLE_SOURCING_LOGIC_SRV_SRV.UIServiceLevels" FromRole="FromRole_UIServiceLevels" ToRole="ToRole_UIServiceLevels"/>
+            </EntityType>
+            <EntityType Name="C_MaterialvaluehelpType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Material"/>
+                </Key>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:text="Material_Text" sap:label="Material" sap:quickinfo="Material Number"/>
+                <Property Name="Material_Text" Type="Edm.String" MaxLength="40" sap:label="Material description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MaterialType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Material type"/>
+                <Property Name="MaterialGroup" Type="Edm.String" MaxLength="9" sap:display-format="UpperCase" sap:label="Material Group"/>
+                <Property Name="MaterialBaseUnit" Type="Edm.String" MaxLength="3" sap:label="Base Unit of Measure" sap:semantics="unit-of-measure"/>
+            </EntityType>
+            <EntityType Name="C_SoldToValueHelpType" sap:label="Sold-to Party" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Customer"/>
+                </Key>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="CustomerName" sap:label="Customer" sap:quickinfo="Customer Number"/>
+                <Property Name="CustomerName" Type="Edm.String" MaxLength="80" sap:label="Name" sap:quickinfo="Name of Customer"/>
+                <Property Name="OrganizationBPName1" Type="Edm.String" MaxLength="35" sap:label="Name" sap:quickinfo="Name 1"/>
+                <Property Name="OrganizationBPName2" Type="Edm.String" MaxLength="35" sap:label="Name 2"/>
+                <Property Name="PostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code" sap:quickinfo="City postal code"/>
+                <Property Name="CityName" Type="Edm.String" MaxLength="40" sap:label="City"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country Key"/>
+            </EntityType>
+            <EntityType Name="I_CustomerType" sap:label="Customer" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Customer"/>
+                </Key>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="CustomerName" sap:label="Customer" sap:quickinfo="Customer Number"/>
+                <Property Name="CustomerName" Type="Edm.String" MaxLength="80" sap:label="Name of Customer"/>
+                <Property Name="CustomerFullName" Type="Edm.String" MaxLength="220" sap:display-format="UpperCase" sap:label="Customer Name" sap:quickinfo="Customer Full Name"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created by" sap:quickinfo="Name of Person who Created the Object"/>
+                <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created on" sap:quickinfo="Date on which the Record Was Created"/>
+                <Property Name="AddressID" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Address"/>
+                <Property Name="CustomerClassification" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Customer classific." sap:quickinfo="Customer classification"/>
+                <Property Name="VATRegistration" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="VAT Registration No." sap:quickinfo="VAT Registration Number"/>
+                <Property Name="CustomerAccountGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Account group" sap:quickinfo="Customer Account Group"/>
+                <Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Authorization Group"/>
+                <Property Name="DeliveryIsBlocked" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Delivery block" sap:quickinfo="Central delivery block for the customer"/>
+                <Property Name="PostingIsBlocked" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Posting Block" sap:quickinfo="Central posting block"/>
+                <Property Name="BillingIsBlockedForCustomer" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Billing block" sap:quickinfo="Central billing block for customer"/>
+                <Property Name="OrderIsBlockedForCustomer" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Central order block" sap:quickinfo="Central order block for customer"/>
+                <Property Name="InternationalLocationNumber1" Type="Edm.String" MaxLength="7" sap:display-format="NonNegative" sap:label="Int. location no. 1" sap:quickinfo="International location number  (part 1)"/>
+                <Property Name="IsOneTimeAccount" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="One-time account" sap:quickinfo="Indicator: Is the account a one-time account?"/>
+                <Property Name="TaxJurisdiction" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase" sap:label="Tax Jurisdiction"/>
+                <Property Name="Industry" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Industry" sap:quickinfo="Industry key"/>
+                <Property Name="TaxNumberType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Tax number type" sap:quickinfo="Tax Number Type"/>
+                <Property Name="TaxNumber1" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Tax Number 1"/>
+                <Property Name="TaxNumber2" Type="Edm.String" MaxLength="11" sap:display-format="UpperCase" sap:label="Tax Number 2"/>
+                <Property Name="TaxNumber3" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Tax Number 3"/>
+                <Property Name="TaxNumber4" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Tax Number 4"/>
+                <Property Name="TaxNumber5" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:label="Tax Number 5"/>
+                <Property Name="CustomerCorporateGroup" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Group key"/>
+                <Property Name="Supplier" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Vendor" sap:quickinfo="Account Number of Vendor or Creditor"/>
+                <Property Name="NielsenRegion" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Nielsen indicator" sap:quickinfo="Nielsen ID"/>
+                <Property Name="IndustryCode1" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Industry code 1"/>
+                <Property Name="IndustryCode2" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Industry code 2"/>
+                <Property Name="IndustryCode3" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Industry code 3"/>
+                <Property Name="IndustryCode4" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Industry code 4"/>
+                <Property Name="IndustryCode5" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Industry code 5"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country" sap:quickinfo="Country Key"/>
+                <Property Name="OrganizationBPName1" Type="Edm.String" MaxLength="35" sap:label="Name" sap:quickinfo="Name 1"/>
+                <Property Name="OrganizationBPName2" Type="Edm.String" MaxLength="35" sap:label="Name 2"/>
+                <Property Name="CityName" Type="Edm.String" MaxLength="35" sap:label="City"/>
+                <Property Name="PostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code"/>
+                <Property Name="StreetName" Type="Edm.String" MaxLength="35" sap:label="Street" sap:quickinfo="Street and House Number"/>
+                <Property Name="SortField" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Search Term" sap:quickinfo="Sort Field"/>
+                <Property Name="AlternativePayerAccount" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Alternative payer" sap:quickinfo="Account number of an alternative payer"/>
+                <Property Name="DataMediumExchangeIndicator" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="DME indicator" sap:quickinfo="Report key for data medium exchange"/>
+                <Property Name="VATLiability" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Liable for VAT"/>
+                <Property Name="IsBusinessPurposeCompleted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="PurposeComplete Flag" sap:quickinfo="Business Purpose Completed Flag"/>
+                <Property Name="ResponsibleType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Tax type"/>
+                <Property Name="FiscalAddress" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Fiscal address" sap:quickinfo="Account number of the master record with the fiscal address"/>
+                <Property Name="NFPartnerIsNaturalPerson" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Natural Person"/>
+                <Property Name="DeletionIndicator" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Deletion flag" sap:quickinfo="Central Deletion Flag for Master Record"/>
+                <Property Name="Language" Type="Edm.String" MaxLength="2" sap:label="Language Key"/>
+                <Property Name="TaxInvoiceRepresentativeName" Type="Edm.String" MaxLength="10" sap:label="Rep's Name" sap:quickinfo="Name of Representative"/>
+                <Property Name="BusinessType" Type="Edm.String" MaxLength="30" sap:label="Type of Business"/>
+                <Property Name="IndustryType" Type="Edm.String" MaxLength="30" sap:label="Type of Industry"/>
+                <Property Name="CustomerPlant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant"/>
+            </EntityType>
+            <EntityType Name="I_InventoryValuationTypeType" sap:label="Inventory Valuation Type" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="InventoryValuationType"/>
+                </Key>
+                <Property Name="InventoryValuationType" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Valuation Type"/>
+                <Property Name="AcctCategoryRef" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Acct cat. reference" sap:quickinfo="Account category reference"/>
+                <Property Name="InternalPurchasingRule" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Int. purchase orders" sap:quickinfo="Internal purchase orders allowed"/>
+                <Property Name="ExternalPurchasingRule" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Ext. Purchase Orders" sap:quickinfo="External Purchase Orders Allowed"/>
+            </EntityType>
+            <EntityType Name="I_MaterialType" sap:label="Material" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Material"/>
+                </Key>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:text="Material_Text" sap:label="Material" sap:quickinfo="Material Number"/>
+                <Property Name="Material_Text" Type="Edm.String" MaxLength="40" sap:label="Material description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MaterialType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Material type"/>
+                <Property Name="MaterialGroup" Type="Edm.String" MaxLength="9" sap:display-format="UpperCase" sap:label="Material Group"/>
+                <Property Name="MaterialBaseUnit" Type="Edm.String" MaxLength="3" sap:label="Base Unit of Measure" sap:semantics="unit-of-measure"/>
+                <Property Name="MaterialGrossWeight" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MaterialWeightUnit" sap:label="Gross Weight"/>
+                <Property Name="MaterialNetWeight" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MaterialWeightUnit" sap:label="Net weight"/>
+                <Property Name="MaterialWeightUnit" Type="Edm.String" MaxLength="3" sap:label="Weight unit" sap:quickinfo="Weight Unit" sap:semantics="unit-of-measure"/>
+                <Property Name="MaterialManufacturerNumber" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Manufacturer" sap:quickinfo="Manufacturer number"/>
+                <Property Name="MaterialManufacturerPartNumber" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Mfr Part Number" sap:quickinfo="Manufacturer Part Number"/>
+                <Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Authorization Group"/>
+                <Property Name="IsBatchManagementRequired" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Batch management" sap:quickinfo="Batch management requirement indicator"/>
+                <Property Name="Brand" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Brand" sap:quickinfo="Brand Code"/>
+                <Property Name="Zsize" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Tire Size"/>
+                <Property Name="Model" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Model" sap:quickinfo="Model Code"/>
+                <Property Name="Supplier1" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="BP NA Rebill"/>
+                <Property Name="ZMarks" Type="Edm.String" MaxLength="80" sap:display-format="UpperCase" sap:label="Marks"/>
+                <Property Name="ZKVIScore" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="KVI Score"/>
+                <Property Name="ZSrvTypCode" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Service Type Code"/>
+                <Property Name="ZTier" Type="Edm.String" MaxLength="13" sap:display-format="UpperCase" sap:label="Tier"/>
+                <Property Name="ZTrdDesgnCde" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Tread Design Code"/>
+                <Property Name="ZUTQGTmp" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="UTQG Temperature Rat" sap:quickinfo="UTQG Temperature Rating"/>
+                <Property Name="ZUTQGRat" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="UTQG Traction Rating"/>
+                <Property Name="ZUTQGTRd" Type="Edm.String" MaxLength="13" sap:display-format="UpperCase" sap:label="UTQG Treadwear"/>
+                <Property Name="ZMFPart" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Mfr Part Number" sap:quickinfo="Manufacturer Part Number"/>
+                <Property Name="ZOffset" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Offset"/>
+                <Property Name="ZColFinEN" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Colour/Finish (Eng)" sap:quickinfo="Colour/Finish (English)"/>
+                <Property Name="ZColFinFR" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Colour/Finish (Fr)" sap:quickinfo="Colour/Finish (French)"/>
+                <Property Name="ZStockStat" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Stock Status"/>
+                <Property Name="ZPerfCat" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Performance Cat"/>
+                <Property Name="ZStructure" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Structure Type" sap:quickinfo="Structure"/>
+                <Property Name="ZWheelMat" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Wheel Material"/>
+                <Property Name="ZWheelBlt" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Wheel Bolt Seat" sap:quickinfo="Wheel Bolt seat,"/>
+                <Property Name="ZWheelOutLip" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Wheel Outer Lip" sap:quickinfo="Wheel outer lip,"/>
+                <Property Name="ZWheelWinter" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Winter App Wheel" sap:quickinfo="Winter App Wheel,"/>
+                <Property Name="ZSeason" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Season Code"/>
+                <Property Name="ZEcoTire" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Eco Tire"/>
+                <Property Name="ZStud" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Studded Code"/>
+                <Property Name="ZWarr" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Warranty Code"/>
+                <Property Name="Z3PMSF" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Three-Peak Symbol" sap:quickinfo="Three-Peak Mountain Snowflake Symbol"/>
+                <Property Name="ZLoadIndx" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Load Index single" sap:quickinfo="Load Index Single"/>
+                <Property Name="ZDualload" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Load Index dual" sap:quickinfo="Load Index Dual"/>
+                <Property Name="ZSSpdRat" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Speed Rating"/>
+                <Property Name="ZZRated" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Z-Rated Tire"/>
+                <Property Name="ZReplMat" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Rplcmnt Mat Nmb" sap:quickinfo="Replacement Material Number"/>
+                <Property Name="ZLoadRng" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Load Range"/>
+                <Property Name="ZRft" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Run Flat Code"/>
+                <Property Name="ZNoise" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Noise Reduction"/>
+                <Property Name="ZSideWall" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Sidewall Code"/>
+                <Property Name="ZBPNATACC" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="BP NA Rebill"/>
+                <Property Name="ZMfrPN" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Mfr Part Number" sap:quickinfo="Manufacturer Part Number"/>
+                <Property Name="ZBltPat" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Bolt Pattern"/>
+                <Property Name="ZAppCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Application Code"/>
+                <Property Name="ZZStudSize" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Stud Size" sap:quickinfo="Stud Size,"/>
+                <Property Name="ZKVIRnk" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="KVI Rank"/>
+                <Property Name="Z2TrdDepth32" Type="Edm.String" MaxLength="13" sap:display-format="UpperCase"/>
+                <Property Name="Z2TdDepth" Type="Edm.String" MaxLength="13" sap:display-format="UpperCase"/>
+                <Property Name="Z2WheelBckSpc" Type="Edm.String" MaxLength="13" sap:display-format="UpperCase"/>
+                <Property Name="Z2WheelDmter" Type="Edm.String" MaxLength="13" sap:display-format="UpperCase"/>
+                <Property Name="Z2WheelWdth" Type="Edm.String" MaxLength="13" sap:display-format="UpperCase"/>
+                <Property Name="Z2RvltnKM" Type="Edm.String" MaxLength="13" sap:display-format="UpperCase"/>
+                <Property Name="Z2RvltnMI" Type="Edm.String" MaxLength="13" sap:display-format="UpperCase"/>
+                <Property Name="Z2DualMaxPSI" Type="Edm.String" MaxLength="13" sap:display-format="UpperCase"/>
+                <Property Name="Z2RDiameter" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase"/>
+                <Property Name="Z2ODiameter" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase"/>
+                <Property Name="Z2RimMeas" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase"/>
+                <Property Name="Z2RimMAx" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase"/>
+                <Property Name="Z2RimMin" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase"/>
+                <Property Name="Z2MaxPSI" Type="Edm.String" MaxLength="13" sap:display-format="UpperCase"/>
+                <Property Name="Z2LoadSnglMaxLBS" Type="Edm.String" MaxLength="13" sap:display-format="UpperCase"/>
+                <Property Name="Z2LoadDualMaxLBS" Type="Edm.String" MaxLength="13" sap:display-format="UpperCase"/>
+                <Property Name="Z2TrdWdth" Type="Edm.String" MaxLength="13" sap:display-format="UpperCase"/>
+                <Property Name="Z2CentDiam" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase"/>
+                <Property Name="Z2Swidth" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase"/>
+                <Property Name="Z2Ratio" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase"/>
+            </EntityType>
+            <EntityType Name="I_ShippingConditionType" sap:label="Shipping Condition" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ShippingCondition"/>
+                </Key>
+                <Property Name="ShippingCondition" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:text="ShippingCondition_Text" sap:label="Shipping Conditions"/>
+                <Property Name="ShippingCondition_Text" Type="Edm.String" MaxLength="20" sap:label="Description" sap:quickinfo="Description of the shipping conditions" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="ZC_LE_BOOLVALUESType" sap:label="Sourcing Logic - Boolean Values" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="langu"/>
+                    <PropertyRef Name="value"/>
+                </Key>
+                <Property Name="langu" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Language Key"/>
+                <Property Name="value" Type="Edm.String" Nullable="false" MaxLength="5" sap:display-format="UpperCase" sap:text="text"/>
+                <Property Name="text" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Text"/>
+            </EntityType>
+            <EntityType Name="ZC_LE_SHIP_CONDType" sap:label="Shipping Conditions - Value Help" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="vsbed"/>
+                </Key>
+                <Property Name="vsbed" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:text="vtext" sap:label="Shipping Conditions"/>
+                <Property Name="vtext" Type="Edm.String" MaxLength="20" sap:label="Text" sap:quickinfo="Description of the shipping conditions"/>
+            </EntityType>
+            <EntityType Name="ZC_LE_SHIP_METHODType" sap:label="Shipping Conditions - Value Help" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="katr2"/>
+                </Key>
+                <Property Name="katr2" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:text="vtext" sap:label="Inventory Visibility"/>
+                <Property Name="vtext" Type="Edm.String" MaxLength="20" sap:label="Text" sap:quickinfo="Description"/>
+            </EntityType>
+            <EntityType Name="ZI_LE_CUSTOMER_PARAMETERSType" sap:label="Customer Parameters for Sourcing Logic" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="kunnr"/>
+                </Key>
+                <Property Name="kunnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Customer" sap:quickinfo="Customer Number"/>
+                <Property Name="name1" Type="Edm.String" MaxLength="35" sap:label="Name" sap:quickinfo="Name 1"/>
+                <Property Name="katr2" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Inventory Visibility"/>
+                <Property Name="katr5" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Saturday Delivery"/>
+                <Property Name="katr7" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Plant: Studding?"/>
+                <Property Name="vsbed" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Shipping Conditions"/>
+            </EntityType>
+            <EntityType Name="Z_TVK2_CDSType" sap:label="CDS view for TVK2" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="InventoryVisibility"/>
+                </Key>
+                <Property Name="InventoryVisibility" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Inventory Visibility"/>
+                <Property Name="InventoryVisibility_Text" Type="Edm.String" MaxLength="20" sap:label="Description"/>
+            </EntityType>
+            <Association Name="ServiceLevels" sap:content-version="1">
+                <End Type="ZLE_SOURCING_LOGIC_SRV_SRV.Shipment" Multiplicity="1" Role="FromRole_ServiceLevels"/>
+                <End Type="ZLE_SOURCING_LOGIC_SRV_SRV.ServiceLevel" Multiplicity="*" Role="ToRole_ServiceLevels"/>
+            </Association>
+            <Association Name="UIServiceLevels" sap:content-version="1">
+                <End Type="ZLE_SOURCING_LOGIC_SRV_SRV.UIShipment" Multiplicity="1" Role="FromRole_UIServiceLevels"/>
+                <End Type="ZLE_SOURCING_LOGIC_SRV_SRV.ServiceLevel" Multiplicity="*" Role="ToRole_UIServiceLevels"/>
+            </Association>
+            <Association Name="Shipments" sap:content-version="1">
+                <End Type="ZLE_SOURCING_LOGIC_SRV_SRV.Request" Multiplicity="1" Role="FromRole_Shipments"/>
+                <End Type="ZLE_SOURCING_LOGIC_SRV_SRV.Shipment" Multiplicity="*" Role="ToRole_Shipments"/>
+            </Association>
+            <EntityContainer Name="ZLE_SOURCING_LOGIC_SRV_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="C_Materialvaluehelp" EntityType="ZLE_SOURCING_LOGIC_SRV_SRV.C_MaterialvaluehelpType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="C_SoldToValueHelp" EntityType="ZLE_SOURCING_LOGIC_SRV_SRV.C_SoldToValueHelpType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_Customer" EntityType="ZLE_SOURCING_LOGIC_SRV_SRV.I_CustomerType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="I_InventoryValuationType" EntityType="ZLE_SOURCING_LOGIC_SRV_SRV.I_InventoryValuationTypeType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_Material" EntityType="ZLE_SOURCING_LOGIC_SRV_SRV.I_MaterialType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_ShippingCondition" EntityType="ZLE_SOURCING_LOGIC_SRV_SRV.I_ShippingConditionType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZC_LE_BOOLVALUES" EntityType="ZLE_SOURCING_LOGIC_SRV_SRV.ZC_LE_BOOLVALUESType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZC_LE_SHIP_COND" EntityType="ZLE_SOURCING_LOGIC_SRV_SRV.ZC_LE_SHIP_CONDType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZC_LE_SHIP_METHOD" EntityType="ZLE_SOURCING_LOGIC_SRV_SRV.ZC_LE_SHIP_METHODType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZI_LE_CUSTOMER_PARAMETERS" EntityType="ZLE_SOURCING_LOGIC_SRV_SRV.ZI_LE_CUSTOMER_PARAMETERSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="Z_TVK2_CDS" EntityType="ZLE_SOURCING_LOGIC_SRV_SRV.Z_TVK2_CDSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="RequestSet" EntityType="ZLE_SOURCING_LOGIC_SRV_SRV.Request" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ShipmentSet" EntityType="ZLE_SOURCING_LOGIC_SRV_SRV.Shipment" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ServiceLevelSet" EntityType="ZLE_SOURCING_LOGIC_SRV_SRV.ServiceLevel" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="UIShipmentSet" EntityType="ZLE_SOURCING_LOGIC_SRV_SRV.UIShipment" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="ServiceLevelsSet" Association="ZLE_SOURCING_LOGIC_SRV_SRV.ServiceLevels" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ShipmentSet" Role="FromRole_ServiceLevels"/>
+                    <End EntitySet="ServiceLevelSet" Role="ToRole_ServiceLevels"/>
+                </AssociationSet>
+                <AssociationSet Name="UIServiceLevels_AssocSet" Association="ZLE_SOURCING_LOGIC_SRV_SRV.UIServiceLevels" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="UIShipmentSet" Role="FromRole_UIServiceLevels"/>
+                    <End EntitySet="ServiceLevelSet" Role="ToRole_UIServiceLevels"/>
+                </AssociationSet>
+                <AssociationSet Name="ShipmentsSet" Association="ZLE_SOURCING_LOGIC_SRV_SRV.Shipments" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="RequestSet" Role="FromRole_Shipments"/>
+                    <End EntitySet="ShipmentSet" Role="ToRole_Shipments"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZLE_SOURCING_LOGIC_SRV_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZLE_SOURCING_LOGIC_SRV_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

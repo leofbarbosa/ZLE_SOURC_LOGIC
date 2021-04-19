@@ -1,6 +1,6 @@
 specVersion: "1.0"
 metadata:
-  name: com.touchette.sourcinglogicdisplay
+  name: zle_sourc_logic
 type: application
 ui5Theme: sap_fiori_3
 server:
@@ -11,8 +11,8 @@ server:
         ignoreCertError: false
         backend:
           - path: /sap
-            url: http://tch-s4hds1.grtouchette.com:8000
-            destination: http://tch-s4hds1.grtouchette.com:8000, client 100
+            url: https://tch-s4hds1.grtouchette.com:44300/
+            destination: https://tch-s4hds1.grtouchette.com:44300, client 100
         ui5:
           path:
             - /resources

@@ -1,0 +1,31 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ZLE_SOURC_LOGIC.controller.S1" displayBlock="true" afterInit="">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<sap.ui.comp.smartfilterbar:SmartFilterBar xmlns:sap.ui.comp.smartfilterbar="sap.ui.comp.smartfilterbar" class="sapContrastPlus" smartVariant="Element sap.ui.comp.smartvariants.SmartVariantManagement#__bar0-variant" hSpacing="0" showGoOnFB="true" id="smartFilter" entityType="UIShipment" fieldGroupIds="" expandAdvancedArea="true" advancedMode="true" initialized="onLoadSmartFilter" initialise="" afterVariantLoad="">
+						<sap.ui.comp.smartfilterbar:controlConfiguration>
+							<sap.ui.comp.smartfilterbar:ControlConfiguration id="Customer" visibleInAdvancedArea="true" filterType="single" controlType="input" index="1" key="Customer"/>
+							<sap.ui.comp.smartfilterbar:ControlConfiguration id="Material" visibleInAdvancedArea="true" filterType="single" controlType="input" index="2" key="Material"/>
+							<sap.ui.comp.smartfilterbar:ControlConfiguration id="OrderQty" visibleInAdvancedArea="true" filterType="single" controlType="input" index="3" key="OrderQty"/>
+							<sap.ui.comp.smartfilterbar:ControlConfiguration id="ReqDate" visibleInAdvancedArea="true" filterType="single" controlType="date" key="RequestDate" index="4"/>
+							<sap.ui.comp.smartfilterbar:ControlConfiguration id="Studded" visibleInAdvancedArea="true" filterType="single" controlType="dropDownList" displayBehaviour="descriptionAndId" key="Studded" index="5"/>
+							<sap.ui.comp.smartfilterbar:ControlConfiguration id="Shipping" visibleInAdvancedArea="true" filterType="single" controlType="dropDownList" displayBehaviour="descriptionAndId" key="ShippingMethod" index="6"/>
+							<sap.ui.comp.smartfilterbar:ControlConfiguration id="Saturday" visibleInAdvancedArea="true" filterType="single" controlType="dropDownList" displayBehaviour="descriptionAndId" key="AcceptSaturday" index="7"/>
+							<sap.ui.comp.smartfilterbar:ControlConfiguration id="Inventory" visibleInAdvancedArea="true" filterType="single" controlType="dropDownList" displayBehaviour="descriptionAndId" key="CustomerCluster" index="8"/>
+						</sap.ui.comp.smartfilterbar:controlConfiguration>
+					</sap.ui.comp.smartfilterbar:SmartFilterBar>
+					<Toolbar>
+						<Button icon="sap-icon://customer" type="Emphasized" text="{@i18n&gt;CUSTPAR}" id="loadParameters" width="250px" press="onLoadParameters"/>
+						<Text xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="lblCustomer" maxLines="1" text="{@i18n&gt;CUSTOMER1}" visible="true"/>
+						<Text id="txtCustomer" maxLines="1" text="" visible="true"/>
+						<Text xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="lblInventory" maxLines="1" text="{@i18n&gt;INVVIS}" visible="true"/>
+						<Text id="txtInventory" maxLines="1" text="" visible="true"/>
+					<content/>
+					</Toolbar>
+					<sap.ui.comp.smarttable:SmartTable xmlns:sap.ui.comp.smarttable="sap.ui.comp.smarttable" width="100%" direction="Column" fitContainer="true" header="Shipments" id="smartTable" smartFilterId="smartFilter" fieldGroupIds="" initiallyVisibleFields="Plant,Material,ConfirmedQty,ShuttleFlag,ShippingFees,DeliveryDate,DeliveryTime,Description" entitySet="UIShipmentSet" tableType="ResponsiveTable" dataReceived="onDataReceived"/>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

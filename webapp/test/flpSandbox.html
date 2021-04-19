@@ -43,10 +43,10 @@
                     }
                 },
                 applications: {
-				"masterDetail-display": {
+				"app-tile": {
 					title: "Sourcing Logic Display",
 					description: "A Fiori application.",
-					additionalInformation: "SAPUI5.Component=com.touchette.sourcinglogicdisplay",
+					additionalInformation: "SAPUI5.Component=ZLE_SOURC_LOGIC",
 					applicationType: "URL",
 					url: "../"
                     }
@@ -60,14 +60,14 @@
         <script
             id="sap-ui-bootstrap"
             src="/resources/sap-ui-core.js"
-            data-sap-ui-libs="sap.m, sap.ushell, sap.ui.core, sap.f, sap.ui.comp, sap.ui.table, sap.suite.ui.generic.template, sap.ui.generic.app"
+            data-sap-ui-libs="sap.collaboration, sap.m, sap.ui.commons, sap.ui.comp, sap.ui.core, sap.ui.layout, sap.ushell, sap.uxap, sap.f, sap.ui.generic.app, sap.ui.table"
             data-sap-ui-async="true"
-			data-sap-ui-preload="async"
+            data-sap-ui-preload="async"
             data-sap-ui-theme="sap_fiori_3"
             data-sap-ui-compatVersion="edge"
-            data-sap-ui-flexibilityServices='[{"applyConnector":"com/touchette/sourcinglogicdisplay/test/changes_loader", "custom":true}]'
+            data-sap-ui-flexibilityServices='[{"applyConnector":"ZLE_SOURC_LOGIC/test/changes_loader", "custom":true}]'
             data-sap-ui-language="en"
-            data-sap-ui-resourceroots='{"com.touchette.sourcinglogicdisplay": "../"}'
+            data-sap-ui-resourceroots='{"ZLE_SOURC_LOGIC": "../"}'
             data-sap-ui-frameOptions="allow"
         >
             // NON-SECURE setting for testing environment
