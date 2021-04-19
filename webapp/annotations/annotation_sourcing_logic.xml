@@ -1,0 +1,241 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Aggregation.V1.xml">
+		<edmx:Include Alias="Aggregation" Namespace="Org.OData.Aggregation.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Authorization.V1.xml">
+		<edmx:Include Alias="Auth" Namespace="Org.OData.Authorization.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml">
+		<edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470974/Common.xml?api=v2">
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470971/Communication.xml?api=v2">
+		<edmx:Include Alias="Communication" Namespace="com.sap.vocabularies.Communication.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+		<edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Measures.V1.xml">
+		<edmx:Include Alias="Measures" Namespace="Org.OData.Measures.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470968/UI.xml?api=v2">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Validation.V1.xml">
+		<edmx:Include Alias="Validation" Namespace="Org.OData.Validation.V1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<!-- List Report -->
+			<Annotations Target="ZLE_SOURCING_LOGIC_SRV_SRV.UIShipment">
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>Customer</PropertyPath>
+						<PropertyPath>Material</PropertyPath>
+						<PropertyPath>OrderQty</PropertyPath>
+						<PropertyPath>RequestDate</PropertyPath>
+						<PropertyPath>Studded</PropertyPath>
+						<PropertyPath>ShippingMethod</PropertyPath>
+						<PropertyPath>AcceptSaturday</PropertyPath>
+						<PropertyPath>CustomerCluster</PropertyPath>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<!--<Record Type="UI.DataField">-->
+						<!--	<PropertyValue Property="Value" Path="Customer"/>-->
+						<!--	<PropertyValue Property="Label" String="{@i18n&gt;CUSTOMER}"/>-->
+						<!--</Record>-->
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Plant"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;PLANT}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Material"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;MATERIAL}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ConfirmedQty"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;CONFIRMEDQTY}"/>
+						</Record>
+						<!--<Record Type="UI.DataField">-->
+						<!--	<PropertyValue Property="Value" Path="Unit"/>-->
+						<!--	<PropertyValue Property="Label" String="{@i18n&gt;UNIT}"/>-->
+						<!--</Record>-->
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ShuttleFlag"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;SHUTTLE}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ShippingFees"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;SHIPFEE}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="DeliveryDate"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;DELIVERYDATE}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="DeliveryTime"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;DELIVERYTIME}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Description"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;SERVICELEVEL}"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup">
+					<Record Type="UI.FieldGroupType">
+						<PropertyValue Property="Label" String="{@i18n&gt;appDescription}"/>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="Customer"/>
+									<PropertyValue Property="Label" String="{@i18n&gt;CUSTOMER}"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="Material"/>
+									<PropertyValue Property="Label" String="{@i18n&gt;MATERIAL}"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="OrderQty"/>
+									<PropertyValue Property="Label" String="{@i18n&gt;ORDERQTY}"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="RequestDate"/>
+									<PropertyValue Property="Label" String="{@i18n&gt;REQUESTDATE}"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="Studded"/>
+									<PropertyValue Property="Label" String="{@i18n&gt;STUDDED}"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="ShippingMethod"/>
+									<PropertyValue Property="Label" String="{@i18n&gt;SHIPPINGMETHOD}"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<!-- Object Page -->
+				<Annotation Term="UI.HeaderInfo">
+					<Record Type="UI.HeaderInfoType">
+						<PropertyValue Property="TypeName" String="{@i18n&gt;SHIPMENT}"/>
+						<PropertyValue Property="TypeNamePlural" String="{@i18n&gt;SHIPMENTS}"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField">
+								<PropertyValue Property="Value" Path="Customer"/>
+								<PropertyValue Property="Label" String="{@i18n&gt;CUSTOMER}"/>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataField">
+								<PropertyValue Property="Value" Path="Description"/>
+								<PropertyValue Property="Label" String="{@i18n&gt;DESCRIPTION}"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<!-- facets -->
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.ReferenceFacet">
+							<PropertyValue Property="Label" String="{@i18n&gt;DESCRIPTION}"/>
+							<PropertyValue Property="ID" String="generalInfo"/>
+							<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZLE_SOURCING_LOGIC_SRV_SRV.UIShipment/AcceptSaturday">
+				<Annotation Term="com.sap.vocabularies.Common.v1.Label" String="{@i18n&gt;AcceptSaturday}"/>
+			</Annotations>
+			<Annotations Target="ZLE_SOURCING_LOGIC_SRV_SRV.UIShipment/CustomerCluster">
+				<Annotation Term="com.sap.vocabularies.Common.v1.Label" String="{@i18n&gt;CUSTOMERCLUSTER}"/>
+			</Annotations>
+			<!-- search helpers -->
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZLE_SOURCING_LOGIC_SRV_SRV.UIShipment/Customer">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="{@i18n&gt;CUSTOMER}"/>
+						<PropertyValue Property="CollectionPath" String="I_Customer"/>
+						<PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Customer"/>
+									<PropertyValue Property="ValueListProperty" String="Customer"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="CustomerName"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZLE_SOURCING_LOGIC_SRV_SRV.UIShipment/Material">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="{@i18n&gt;MATERIAL}"/>
+						<PropertyValue Property="CollectionPath" String="I_Material"/>
+						<PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Material"/>
+									<PropertyValue Property="ValueListProperty" String="Material"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Material_Text"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZLE_SOURCING_LOGIC_SRV_SRV.UIShipment/ShippingMethod">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="{@i18n&gt;SHIPPINGMETHOD}"/>
+						<PropertyValue Property="CollectionPath" String="I_ShippingCondition"/>
+						<PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="ShippingMethod"/>
+									<PropertyValue Property="ValueListProperty" String="ShippingCondition"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="ShippingCondition_Text"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZLE_SOURCING_LOGIC_SRV_SRV.UIShipment/CustomerCluster">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="{@i18n&gt;CUSTOMERCLUSTER}"/>
+						<PropertyValue Property="CollectionPath" String="Z_TVK2_CDS"/>
+						<PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="CustomerCluster"/>
+									<PropertyValue Property="ValueListProperty" String="InventoryVisibility"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="InventoryVisibility_Text"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
