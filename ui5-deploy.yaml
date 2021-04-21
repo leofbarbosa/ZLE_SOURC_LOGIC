@@ -1,0 +1,18 @@
+specVersion: "1.0"
+metadata:
+  name: "zle_sourc_logic"
+type: application
+ui5Theme: sap_fiori_3
+builder:
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateVersionInfo
+      configuration:
+        target:
+          url: https://tch-s4hss1.grtouchette.com:44300/
+          client: 400
+          auth: basic
+        app:
+          name: zle_sourc_logic
+          package: ZSD_E_110
+          transport: SS1K900033

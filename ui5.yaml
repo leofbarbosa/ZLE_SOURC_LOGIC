@@ -11,8 +11,9 @@ server:
         ignoreCertError: false
         backend:
           - path: /sap
-            url: https://tch-s4hds1.grtouchette.com:44300/
-            destination: https://tch-s4hds1.grtouchette.com:44300, client 100
+            url: https://tch-s4hss1.grtouchette.com:44300/
+            client: "400"
+            destination: https://tch-s4hss1.grtouchette.com:44300/, client 400
         ui5:
           path:
             - /resources

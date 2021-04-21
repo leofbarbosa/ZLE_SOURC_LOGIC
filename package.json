@@ -10,12 +10,12 @@
 	],
 	"main": "webapp/index.html",
 	"scripts": {
-		"start": "fiori run --open test/flpSandbox.html?sap-client=100#app-tile",
-		"start-local": "fiori run --config ./ui5-local.yaml --open test/flpSandboxMockServer.html?sap-client=100#app-tile",
+		"start": "fiori run --open test/flpSandbox.html?sap-client=400#app-tile",
+		"start-local": "fiori run --config ./ui5-local.yaml --open test/flpSandboxMockServer.html?sap-client=400#app-tile",
 		"build": "ui5 build -a --clean-dest --include-task=generateManifestBundle generateCachebusterInfo",
-		"deploy": "fiori verify",
+		"deploy": "ui5 build preload --config ui5-deploy.yaml",
 		"deploy-config": "fiori add deploy-config",
-		"start-mock": "fiori run --open 'test/flpSandboxMockServer.html?sap-client=100#app-tile'",
+		"start-mock": "fiori run --open 'test/flpSandboxMockServer.html?sap-client=400#app-tile'",
 		"unit-tests": "fiori run --open test/unit/unitTests.qunit.html",
 		"int-tests": "fiori run --open test/integration/opaTests.qunit.html"
 	},

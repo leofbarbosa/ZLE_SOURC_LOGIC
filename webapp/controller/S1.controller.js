@@ -18,18 +18,18 @@ sap.ui.define([
 			var sInventory = this.getView().byId("smartFilter").getControlByKey("CustomerCluster"); // create new variable and bind to smart filter parameter
 			var sText = this.getView().byId("txtCustomer");
 			var sInv =  this.getView().byId("txtInventory");
-			sStudded.setValue("");
-			sStudded.setSelectedKey("");
-			sStudded.setSelectedItemId("");
+			// sStudded.setValue("");
+			// sStudded.setSelectedKey("");
+			// sStudded.setSelectedItemId("");
 			sSaturday.setValue("");
 			sSaturday.setSelectedKey("");
 			sSaturday.setSelectedItemId("");
 			sShipping.setValue("");
 			sShipping.setSelectedKey("");
 			sShipping.setSelectedItemId("");
-			sInventory.setValue("");
-			sInventory.setSelectedKey("");
-			sInventory.setSelectedItemId("");
+			// sInventory.setValue("");
+			// sInventory.setSelectedKey("");
+			// sInventory.setSelectedItemId("");
 			sText.setText("");
 			sInv.setText("");
 			
@@ -49,52 +49,53 @@ sap.ui.define([
 					//	sStudded.setSelectedKey(sStudded.mAggregations.picker.mAggregations.content[0].mAggregations.items[1].mProperties.key); //mAggregations.items[1].mProperties.key);
 					//	sStudded.setSelectedItemId(sStudded.mAggregations.picker.mAggregations.content[0].mAggregations.items[1].sId); //mAggregations.items[1].sId);
 					//} else {
-						sStudded.setValue(sStudded.mAggregations.picker.mAggregations.content[0].mAggregations.items[0].mProperties.text); //mAggregations.items[0].mProperties.text);
-						//sStudded.mProperties.selectedKey = "false";
-						//sStudded.mProperties.selectedKey = sStudded.mAggregations.items[0].mProperties.key;
-						//sStudded.mProperties.selectedItemId = sStudded.mAggregations.items[0].sId;
-						sStudded.setSelectedKey(sStudded.mAggregations.picker.mAggregations.content[0].mAggregations.items[0].mProperties.key); //mAggregations.items[0].mProperties.key);
-						sStudded.setSelectedItemId(sStudded.mAggregations.picker.mAggregations.content[0].mAggregations.items[0].sId); //mAggregations.items[0].sId);
+						// sStudded.setValue(sStudded.mAggregations.items[0].mProperties.text); //mAggregations.picker.mAggregations.content[0].mAggregations.items[0].mProperties.text);
+						// sStudded.mProperties.selectedKey = "false";
+						// sStudded.mProperties.selectedKey = sStudded.mAggregations.items[0].mProperties.key;
+						// sStudded.mProperties.selectedItemId = sStudded.mAggregations.items[0].sId;
+						// sStudded.setSelectedKey(sStudded.mAggregations.items[0].mProperties.key); //mAggregations.picker.mAggregations.content[0].mAggregations.items[0].mProperties.key);
+						// sStudded.setSelectedItemId(sStudded.mAggregations.items[0].sId); //mAggregations.picker.mAggregations.content[0].mAggregations.items[0].sId);
 					//}
 					if (oData.results[0].katr5 == 'N') {
-						sSaturday.setValue(sSaturday.mAggregations.picker.mAggregations.content[0].mAggregations.items[0].mProperties.text); //mAggregations.items[1].mProperties.text);
+						sSaturday.setValue(sSaturday.mAggregations.items[1].mProperties.text); //mAggregations.picker.mAggregations.content[0].mAggregations.items[0].mProperties.text);
 						//sSaturday.mProperties.selectedKey = "true";
 						//sSaturday.mProperties.selectedKey = sSaturday.mAggregations.items[1].mProperties.key;
 						//sSaturday.mProperties.selectedItemId = sSaturday.mAggregations.items[1].sId;
-						sSaturday.setSelectedKey(sSaturday.mAggregations.picker.mAggregations.content[0].mAggregations.items[0].mProperties.key); //mAggregations.items[1].mProperties.key);
-						sSaturday.setSelectedItemId(sSaturday.mAggregations.picker.mAggregations.content[0].mAggregations.items[0].sId); //mAggregations.items[1].sId);
+						sSaturday.setSelectedKey(sSaturday.mAggregations.items[1].mProperties.key); //mAggregations.picker.mAggregations.content[0].mAggregations.items[0].mProperties.key);
+						sSaturday.setSelectedItemId(sSaturday.mAggregations.items[1].sId); //mAggregations.picker.mAggregations.content[0].mAggregations.items[0].sId);
 					} 
 					if (oData.results[0].katr5 == 'Y') {
-						sSaturday.setValue(sSaturday.mAggregations.picker.mAggregations.content[0].mAggregations.items[1].mProperties.text); //mAggregations.items[0].mProperties.text);
+						sSaturday.setValue(sSaturday.mAggregations.items[0].mProperties.text); //mAggregations.picker.mAggregations.content[0].mAggregations.items[1].mProperties.text);
 						//sSaturday.mProperties.selectedKey = "false";
 						//sSaturday.mProperties.selectedKey = sSaturday.mAggregations.items[0].mProperties.key;
 						//sSaturday.mProperties.selectedItemId = sSaturday.mAggregations.items[0].sId;
-						sSaturday.setSelectedKey(sSaturday.mAggregations.picker.mAggregations.content[0].mAggregations.items[1].mProperties.key); //mAggregations.items[0].mProperties.key);
-						sSaturday.setSelectedItemId(sSaturday.mAggregations.picker.mAggregations.content[0].mAggregations.items[1].sId); //mAggregations.items[0].sId);
+						sSaturday.setSelectedKey(sSaturday.mAggregations.items[0].mProperties.key); //mAggregations.picker.mAggregations.content[0].mAggregations.items[1].mProperties.key);
+						sSaturday.setSelectedItemId(sSaturday.mAggregations.items[0].sId); //mAggregations.picker.mAggregations.content[0].mAggregations.items[1].sId);
 					}
-					var n = sShipping.mAggregations.picker.mAggregations.content[0].mAggregations.items["length"]; //mAggregations.items["length"];
+					var n = sShipping.mAggregations.items["length"]; //mAggregations.picker.mAggregations.content[0].mAggregations.items["length"];
 					var i = 0;
 					for (i = 0; i < n; i++){
-						if (sShipping.mAggregations.picker.mAggregations.content[0].mAggregations.items[i].mProperties.key == oData.results[0].vsbed){
-							sShipping.setValue(sShipping.mAggregations.picker.mAggregations.content[0].mAggregations.items[i].mProperties.text); //mAggregations.items[i].mProperties.text);
+						if (sShipping.mAggregations.items[i].mProperties.key == oData.results[0].vsbed){ //mAggregations.picker.mAggregations.content[0].mAggregations.items[i].mProperties
+							sShipping.setValue(sShipping.mAggregations.items[i].mProperties.text); //mAggregations.picker.mAggregations.content[0].mAggregations.items[i].mProperties.text);
 							//sShipping.mProperties.selectedKey = sShipping.mAggregations.items[i].mProperties.key;
 							//sShipping.mProperties.selectedItemId = sShipping.mAggregations.items[i].sId;
-							sShipping.setSelectedKey(sShipping.mAggregations.picker.mAggregations.content[0].mAggregations.items[i].mProperties.key); //mAggregations.items[i].mProperties.key);
-							sShipping.setSelectedItemId(sShipping.mAggregations.picker.mAggregations.content[0].mAggregations.items[i].sId); //mAggregations.items[i].sId);
+							sShipping.setSelectedKey(sShipping.mAggregations.items[i].mProperties.key); //mAggregations.picker.mAggregations.content[0].mAggregations.items[i].mProperties.key);
+							sShipping.setSelectedItemId(sShipping.mAggregations.items[i].sId); //mAggregations.picker.mAggregations.content[0].mAggregations.items[i].sId);
 						};
 					};
 					// Setting CSR as default. Requested by Marc-Olivier on 2021/01/26
-					n = sInventory.mAggregations.picker.mAggregations.content[0].mAggregations.items["length"]; //mAggregations.items["length"];
-					i = 0;
-					for (i = 0; i < n; i++){
-						if (sInventory.mAggregations.picker.mAggregations.content[0].mAggregations.items[i].mProperties.key == 'C'){
-							sInventory.setValue(sInventory.mAggregations.picker.mAggregations.content[0].mAggregations.items[i].mProperties.text); //mAggregations.items[i].mProperties.text);
-							//sInventory.mProperties.selectedKey = sInventory.mAggregations.items[i].mProperties.key;
-							//sInventory.mProperties.selectedItemId = sInventory.mAggregations.items[i].sId;
-							sInventory.setSelectedKey(sInventory.mAggregations.picker.mAggregations.content[0].mAggregations.items[i].mProperties.key); //mAggregations.items[i].mProperties.key);
-							sInventory.setSelectedItemId(sInventory.mAggregations.picker.mAggregations.content[0].mAggregations.items[i].sId); //mAggregations.items[i].sId);
-						};
-					};
+					// n = sInventory.mAggregations.items["length"]; //mAggregations.picker.mAggregations.content[0].mAggregations.items["length"];
+					// i = 0;
+					// for (i = 0; i < n; i++){
+					// 	if (sInventory.mAggregations.picker.mAggregations.content[0].mAggregations.items[i].mProperties.key == 'C'){
+					// 		sInventory.setValue(sInventory.mAggregations.items[i].mProperties.text); //mAggregations.picker.mAggregations.content[0].mAggregations.items[i].mProperties.text);
+					// 		sInventory.mProperties.selectedKey = sInventory.mAggregations.items[i].mProperties.key;
+					// 		sInventory.mProperties.selectedItemId = sInventory.mAggregations.items[i].sId;
+					// 		sInventory.setSelectedKey(sInventory.mAggregations.items[i].mProperties.key); //mAggregations.picker.mAggregations.content[0].mAggregations.items[i].mProperties.key);
+					// 		sInventory.setSelectedItemId(sInventory.mAggregations.items[i].sId); //mAggregations.picker.mAggregations.content[0].mAggregations.items[i].sId);
+					// 	};
+					// };
+
 					// Inventory Visivility - getting customer defaults
 					/* n = sInventory.mAggregations.picker.mAggregations.content[0].mAggregations.items["length"]; //mAggregations.items["length"];
 					i = 0;
